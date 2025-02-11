@@ -9,9 +9,18 @@ void TowerEntity::OnInitialize() {
 	m_ammo = m_max;
 	m_shoot = new Timer(0.16f);
 	m_reload = new Timer(1.6f);
+
+	temp_switch = true;
 }
 
 void TowerEntity::OnUpdate() {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && temp_switch) {
+		temp_switch = false;
+		Shoot();
+	}
+	else if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) {
+		temp_switch = true;
+	}
 }
 
 void TowerEntity::OnCollision(Entity* collidedWith) {
@@ -23,8 +32,6 @@ void TowerEntity::OnDestroy() {
 void TowerEntity::Shoot() {
 	BulletEntity* bullet = CreateEntity<BulletEntity>(25, sf::Color::Blue);
 	bullet->SetPosition(GetPosition().x, GetPosition().y);
-	bullet->SetDirection(1, 0);
-	bullet->SetSpeed(1024);
 }
 
 void TowerEntity::Reload() {

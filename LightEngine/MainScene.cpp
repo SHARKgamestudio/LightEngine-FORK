@@ -6,23 +6,38 @@
 
 #include "TowerEntity.h"
 #include "BulletEntity.h"
+#include <iostream>
+#include "EnemyEntity.h"
 
 #pragma endregion
 
 #define TOWER_COUNT 3
 
 void MainScene::OnInitialize() {
-	float diameter = GetWindowHeight() / TOWER_COUNT;
+	m_diameter = GetWindowHeight() / TOWER_COUNT;
+	m_radius = m_diameter / 2;
+
 	for (int i = 0; i < TOWER_COUNT; i++) {
-		TowerEntity* tower = CreateEntity<TowerEntity>(diameter / 2, sf::Color::Green);
-		tower->SetPosition(tower->GetRadius(), tower->GetRadius() + diameter * i);
+		TowerEntity* tower = CreateEntity<TowerEntity>(m_radius, sf::Color::Green);
+		tower->SetPosition(tower->GetRadius(), m_radius + m_diameter * i);
 	}
 }
 
 void MainScene::OnEvent(const sf::Event& event) {
-	if (event.type == sf::Event::EventType::MouseMoved) {
-		sf::Vector2i mousePosition(event.mouseButton.x, event.mouseButton.y);
-		Debug::DrawCircle(mousePosition.x, mousePosition.y, 5, sf::Color::Blue);
+	if (event.type == sf::Event::EventType::MouseButtonPressed) {
+		if (event.mouseButton.button == sf::Mouse::Button::Left) {
+			sf::Vector2i mousePosition(event.mouseButton.x, event.mouseButton.y);
+			Debug::DrawCircle(mousePosition.x, mousePosition.y, 16, sf::Color::Cyan);
+
+			if (mousePosition.x < m_diameter * 1.5f) { return; }
+			for (int i = 0; i < TOWER_COUNT; i++) {
+				if (mousePosition.y < m_diameter + m_diameter * i) {
+					EnemyEntity* enemy = CreateEntity<EnemyEntity>(m_radius, sf::Color::Red);
+					enemy->SetPosition(mousePosition.x, m_radius + m_diameter * i);
+					break;
+				}
+			}
+		}
 	}
 }
 

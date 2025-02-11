@@ -12,4 +12,7 @@ public:
 	virtual void OnUpdate() override;
 	virtual void OnCollision(Entity* collidedWith) override;
 	virtual void OnDestroy() override;
+private:
+	int m_health;
+	int m_maxHealth;
 };

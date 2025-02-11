@@ -1,7 +1,18 @@
 #include "BulletEntity.h"
 
+int BulletEntity::GetDamage() {
+	return m_damage;
+}
+
 void BulletEntity::OnInitialize() {
 	SetRigidBody(false);
+	SetTag(1);
+
+	m_damage = 64;
+	m_speed = 1024;
+
+	SetDirection(1, 0);
+	SetSpeed(m_speed);
 }
 
 void BulletEntity::OnUpdate() {

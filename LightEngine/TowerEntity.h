@@ -29,9 +29,14 @@ public:
 	virtual void OnDestroy() override;
 
 private:
+	int m_health;
+	int m_maxHealth;
+
 	int m_ammo, m_max;
 	Timer* m_shoot;
 	Timer* m_reload;
+
+	bool temp_switch;
 
 	/*State m_current;
 	int m_conditions[Count][Count];
