@@ -1,0 +1,10 @@
+namespace SFML
+{
+    [bindable]
+    [default_interface]
+    runtimeclass LightEngine 
+    {
+        LightEngine();
+        Int32 MyProperty;
+    }
+}
