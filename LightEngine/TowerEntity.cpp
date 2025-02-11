@@ -30,7 +30,7 @@ void TowerEntity::OnDestroy() {
 }
 
 void TowerEntity::Shoot() {
-	BulletEntity* bullet = CreateEntity<BulletEntity>(25, sf::Color::Blue);
+	BulletEntity* bullet = CreateEntity<BulletEntity>(GetRadius() / 4, sf::Color::Blue);
 	bullet->SetPosition(GetPosition().x, GetPosition().y);
 }
 

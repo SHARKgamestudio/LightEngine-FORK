@@ -7,6 +7,9 @@ void EnemyEntity::OnInitialize() {
 
 	m_maxHealth = 100;
 	m_health = m_maxHealth;
+
+	SetDirection(-1, 0);
+	SetSpeed(64);
 }
 
 void EnemyEntity::OnUpdate() {

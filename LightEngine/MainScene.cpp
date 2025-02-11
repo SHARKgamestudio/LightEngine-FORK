@@ -11,7 +11,7 @@
 
 #pragma endregion
 
-#define TOWER_COUNT 3
+#define TOWER_COUNT 8
 
 void MainScene::OnInitialize() {
 	m_diameter = GetWindowHeight() / TOWER_COUNT;
