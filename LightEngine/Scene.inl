@@ -7,7 +7,6 @@
 template<typename T>
 T* Scene::CreateEntity(float radius, const sf::Color& color)
 {
-
 	static_assert(std::is_base_of<Entity, T>::value, "T must be derived from Entity");
 
 	T* newEntity = new T();
@@ -18,6 +17,4 @@ T* Scene::CreateEntity(float radius, const sf::Color& color)
 	mpGameManager->mEntitiesToAdd.push_back(newEntity);
 
 	return newEntity;
-
-	return nullptr;
 }

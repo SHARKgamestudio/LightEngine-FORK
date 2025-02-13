@@ -1,16 +1,27 @@
 #include "TowerEntity.h"
 
+#pragma region Local Dependencies
+
+#include "LivingEntity.h"
 #include "BulletEntity.h"
 #include "Timer.h"
+#include "Tags.h"
 
-void TowerEntity::OnInitialize() {
-	SetRigidBody(false);
+#pragma endregion
+
+TowerEntity::TowerEntity() : LivingEntity(100) {
+	SetTag(FACTION_PLAYER);
+
 	m_max = 8;
 	m_ammo = m_max;
 	m_shoot = new Timer(0.16f);
 	m_reload = new Timer(1.6f);
 
 	temp_switch = true;
+}
+
+void TowerEntity::OnInitialize() {
+	SetRigidBody(false);
 }
 
 void TowerEntity::OnUpdate() {
@@ -23,11 +34,7 @@ void TowerEntity::OnUpdate() {
 	}
 }
 
-void TowerEntity::OnCollision(Entity* collidedWith) {
-}
-
-void TowerEntity::OnDestroy() {
-}
+void TowerEntity::Die() { Destroy(); }
 
 void TowerEntity::Shoot() {
 	BulletEntity* bullet = CreateEntity<BulletEntity>(GetRadius() / 4, sf::Color::Blue);

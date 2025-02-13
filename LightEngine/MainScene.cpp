@@ -1,6 +1,10 @@
 #include "MainScene.h"
 
+#pragma region Local Dependencies
+
 #include "Debug.h"
+
+#pragma endregion
 
 #pragma region Entities
 
@@ -11,7 +15,7 @@
 
 #pragma endregion
 
-#define TOWER_COUNT 8
+#define TOWER_COUNT 4
 
 void MainScene::OnInitialize() {
 	m_diameter = GetWindowHeight() / TOWER_COUNT;

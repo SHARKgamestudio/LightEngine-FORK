@@ -16,6 +16,9 @@
     <Filter Include="Game\Scenes">
       <UniqueIdentifier>{3c162524-a489-4003-8f7b-2e78aaa8410a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Modules">
+      <UniqueIdentifier>{f0985649-6ea4-4178-ae2b-810f52610cec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Entity.cpp">
@@ -51,6 +54,13 @@
     <ClCompile Include="Timer.cpp">
       <Filter>Game\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="HealthModule.cpp">
+      <Filter>Game\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackModule.cpp">
+      <Filter>Game\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="LivingEntity.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h">
@@ -85,6 +95,18 @@
     </ClInclude>
     <ClInclude Include="Timer.h">
       <Filter>Game\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthModule.h">
+      <Filter>Game\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Tags.h">
+      <Filter>Game\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackModule.h">
+      <Filter>Game\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="LivingEntity.h">
+      <Filter>Game\Entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

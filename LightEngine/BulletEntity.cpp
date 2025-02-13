@@ -1,18 +1,20 @@
 #include "BulletEntity.h"
 
-int BulletEntity::GetDamage() {
-	return m_damage;
+#pragma region Local Dependencies
+
+#include "LivingEntity.h"
+#include "Tags.h"
+
+#pragma endregion
+
+BulletEntity::BulletEntity() : AttackModule(20) {
+	SetTag(FACTION_NEUTRAL);
 }
 
 void BulletEntity::OnInitialize() {
 	SetRigidBody(false);
-	SetTag(1);
-
-	m_damage = 64;
-	m_speed = 1024;
-
 	SetDirection(1, 0);
-	SetSpeed(m_speed);
+	SetSpeed(512);
 }
 
 void BulletEntity::OnUpdate() {
@@ -26,7 +28,8 @@ void BulletEntity::OnUpdate() {
 }
 
 void BulletEntity::OnCollision(Entity* collidedWith) {
-}
-
-void BulletEntity::OnDestroy() {
+	if (collidedWith->IsTag(FACTION_ENEMY)) {
+		Attack((LivingEntity*)collidedWith);
+		Destroy();
+	}
 }

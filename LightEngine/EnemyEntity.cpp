@@ -1,30 +1,36 @@
 #include "EnemyEntity.h"
-#include "BulletEntity.h"
 
-void EnemyEntity::OnInitialize() {
+#pragma region Local Dependencies
+
+#include "LivingEntity.h"
+#include "Tags.h"
+
+#pragma endregion
+
+EnemyEntity::EnemyEntity() : LivingEntity(100), AttackModule(20) {
+	SetTag(FACTION_ENEMY);
+}
+
+void EnemyEntity::OnInitialize()  {
 	SetRigidBody(false);
-	SetTag(2);
-
-	m_maxHealth = 100;
-	m_health = m_maxHealth;
-
 	SetDirection(-1, 0);
 	SetSpeed(64);
 }
 
 void EnemyEntity::OnUpdate() {
-	if (m_health <= 0) {
-		Destroy();
+	if (GetPosition().x <= GetRadius() * 3) {
+		SetSpeed(0);
 	}
 }
 
 void EnemyEntity::OnCollision(Entity* collidedWith) {
-	if (collidedWith->IsTag(1)) {
-		collidedWith->Destroy();
+	if (collidedWith->IsTag(FACTION_ENEMY)) {
+		SetSpeed(0);
+	}
 
-		m_health -= ((BulletEntity*)collidedWith)->GetDamage();
+	if (collidedWith->IsTag(FACTION_PLAYER)) {
+		Attack((LivingEntity*)collidedWith);
 	}
 }
 
-void EnemyEntity::OnDestroy() {
-}
+void EnemyEntity::Die() { Destroy(); }

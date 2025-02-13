@@ -20,11 +20,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AttackModule.cpp" />
     <ClCompile Include="BulletEntity.cpp" />
     <ClCompile Include="Debug.cpp" />
     <ClCompile Include="EnemyEntity.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="HealthModule.cpp" />
+    <ClCompile Include="LivingEntity.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -33,6 +36,7 @@
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AttackModule.h" />
     <ClInclude Include="BulletEntity.h">
       <SubType>
       </SubType>
@@ -44,9 +48,15 @@
     </ClInclude>
     <ClInclude Include="Entity.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="HealthModule.h" />
     <ClInclude Include="LEngine.h" />
+    <ClInclude Include="LivingEntity.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="MainScene.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="Tags.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TowerEntity.h">
       <SubType>

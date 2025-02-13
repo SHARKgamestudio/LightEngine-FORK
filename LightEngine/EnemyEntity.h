@@ -2,17 +2,16 @@
 
 #pragma region Local Dependencies
 
-#include "Entity.h"
+#include "LivingEntity.h"
+#include "AttackModule.h"
 
 #pragma endregion
 
-class EnemyEntity : public Entity {
+class EnemyEntity : public LivingEntity, public AttackModule {
 public:
-	virtual void OnInitialize() override;
-	virtual void OnUpdate() override;
-	virtual void OnCollision(Entity* collidedWith) override;
-	virtual void OnDestroy() override;
-private:
-	int m_health;
-	int m_maxHealth;
+	EnemyEntity();
+	void OnInitialize() override;
+	void OnUpdate() override;
+	void OnCollision(Entity* collidedWith) override;
+	void Die() override;
 };

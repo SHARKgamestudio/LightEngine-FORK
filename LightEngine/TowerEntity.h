@@ -2,14 +2,14 @@
 
 #pragma region Local Dependencies
 
-#include "Entity.h"
+#include "LivingEntity.h"
 
 #pragma endregion
 
 class Timer;
 class Action;
 
-class TowerEntity : public Entity {
+class TowerEntity : public LivingEntity {
 public:
 	//enum State {
 	//	Idle,
@@ -23,14 +23,11 @@ public:
 	//	Count
 	//};
 
-	virtual void OnInitialize() override;
-	virtual void OnUpdate() override;
-	virtual void OnCollision(Entity* collidedWith) override;
-	virtual void OnDestroy() override;
-
+	TowerEntity();
+	void OnInitialize() override;
+	void OnUpdate() override;
+	void Die() override;
 private:
-	int m_health;
-	int m_maxHealth;
 
 	int m_ammo, m_max;
 	Timer* m_shoot;

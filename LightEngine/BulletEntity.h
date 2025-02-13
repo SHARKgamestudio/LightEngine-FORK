@@ -3,18 +3,14 @@
 #pragma region Local Dependencies
 
 #include "Entity.h"
+#include "AttackModule.h"
 
 #pragma endregion
 
-class BulletEntity : public Entity {
+class BulletEntity : public Entity, public AttackModule {
 public:
-	int GetDamage();
-
-	virtual void OnInitialize() override;
-	virtual void OnUpdate() override;
-	virtual void OnCollision(Entity* collidedWith) override;
-	virtual void OnDestroy() override;
-private:
-	int m_damage;
-	int m_speed;
+	BulletEntity();
+	void OnInitialize() override;
+	void OnUpdate() override;
+	void OnCollision(Entity* collidedWith) override;
 };
