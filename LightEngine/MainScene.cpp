@@ -2,20 +2,15 @@
 
 #pragma region Local Dependencies
 
-#include "Debug.h"
-
-#pragma endregion
-
-#pragma region Entities
-
 #include "TowerEntity.h"
 #include "BulletEntity.h"
-#include <iostream>
 #include "EnemyEntity.h"
+#include "Debug.h"
+#include "Utils.h"
 
 #pragma endregion
 
-#define TOWER_COUNT 4
+#define TOWER_COUNT 54
 
 void MainScene::OnInitialize() {
 	m_diameter = GetWindowHeight() / TOWER_COUNT;
@@ -24,6 +19,7 @@ void MainScene::OnInitialize() {
 	for (int i = 0; i < TOWER_COUNT; i++) {
 		TowerEntity* tower = CreateEntity<TowerEntity>(m_radius, sf::Color::Green);
 		tower->SetPosition(tower->GetRadius(), m_radius + m_diameter * i);
+		m_towers.push_back(tower);
 	}
 }
 
@@ -47,4 +43,18 @@ void MainScene::OnEvent(const sf::Event& event) {
 
 void MainScene::OnUpdate() {
 	Debug::DrawText(16, 16, "FPS: " + std::to_string(1/GetDeltaTime()), sf::Color::Red);
+
+	for (TowerEntity* tower : m_towers) {
+		if (!tower->IsAlive()) {
+			m_towers.erase(std::remove(m_towers.begin(), m_towers.end(), tower), m_towers.end());
+			break;
+		}
+
+		for (int i = 0; i < m_enemies.size(); i++) {
+			if (tower->GetPosition().y == m_enemies[i]->GetPosition().y) {
+				float distance = Utils::GetDistance(tower->GetPosition().x, 0, m_enemies[i]->GetPosition().x, 0);
+				if(distance < 256) { tower->Shoot(); }
+			}
+		}
+	}
 }

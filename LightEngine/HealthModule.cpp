@@ -9,7 +9,20 @@ HealthModule::HealthModule(int _health, int _maxHealth) {
 HealthModule::~HealthModule() {
 }
 
+bool HealthModule::IsAlive() const {
+	return m_health > 0;
+}
+
 void HealthModule::TakeDamage(int _damage) {
 	if (m_health > 0) m_health -= _damage;
 	else Die();
+}
+
+void HealthModule::Heal(int _heal) {
+	if (m_health > 0) return;
+
+	if (m_health < m_maxHealth) {
+		m_health += _heal;
+		if (m_health > m_maxHealth) m_health = m_maxHealth;
+	}
 }

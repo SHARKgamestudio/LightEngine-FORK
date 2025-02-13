@@ -27,6 +27,9 @@ public:
 	void OnInitialize() override;
 	void OnUpdate() override;
 	void Die() override;
+
+	void Shoot();
+	void Reload();
 private:
 
 	int m_ammo, m_max;
@@ -38,7 +41,4 @@ private:
 	/*State m_current;
 	int m_conditions[Count][Count];
 	Action** m_actions;*/
-
-	void Shoot();
-	void Reload();
 };

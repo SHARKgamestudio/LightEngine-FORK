@@ -6,9 +6,11 @@ public:
 	~HealthModule();
 
 	void TakeDamage(int _damage);
+	void Heal(int _heal);
+	bool IsAlive() const;
 
 	virtual void Die() = 0;
-protected:
+private:
 	int m_health;
 	int m_maxHealth;
 };
