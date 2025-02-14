@@ -1,0 +1,62 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\AMD\\Documents\\Visual Studio 2022\\Projects\\LightEngine-FORK\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C31A8FD3-0204-4F85-BB29-1240472D0DB2}|LightEngine\\LightEngine.vcxproj|C:\\Users\\AMD\\Documents\\Visual Studio 2022\\Projects\\LightEngine-FORK\\LightEngine\\MainScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C31A8FD3-0204-4F85-BB29-1240472D0DB2}|LightEngine\\LightEngine.vcxproj|solutionrelative:LightEngine\\MainScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C31A8FD3-0204-4F85-BB29-1240472D0DB2}|LightEngine\\LightEngine.vcxproj|C:\\Users\\AMD\\Documents\\Visual Studio 2022\\Projects\\LightEngine-FORK\\LightEngine\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C31A8FD3-0204-4F85-BB29-1240472D0DB2}|LightEngine\\LightEngine.vcxproj|solutionrelative:LightEngine\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainScene.cpp",
+              "DocumentMoniker": "C:\\Users\\AMD\\Documents\\Visual Studio 2022\\Projects\\LightEngine-FORK\\LightEngine\\MainScene.cpp",
+              "RelativeDocumentMoniker": "LightEngine\\MainScene.cpp",
+              "ToolTip": "C:\\Users\\AMD\\Documents\\Visual Studio 2022\\Projects\\LightEngine-FORK\\LightEngine\\MainScene.cpp",
+              "RelativeToolTip": "LightEngine\\MainScene.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-14T08:36:45.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\AMD\\Documents\\Visual Studio 2022\\Projects\\LightEngine-FORK\\LightEngine\\main.cpp",
+              "RelativeDocumentMoniker": "LightEngine\\main.cpp",
+              "ToolTip": "C:\\Users\\AMD\\Documents\\Visual Studio 2022\\Projects\\LightEngine-FORK\\LightEngine\\main.cpp",
+              "RelativeToolTip": "LightEngine\\main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-12T17:54:01.296Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
