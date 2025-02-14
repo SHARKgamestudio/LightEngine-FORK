@@ -7,6 +7,7 @@
 #include "EnemyEntity.h"
 #include "Debug.h"
 #include "Utils.h"
+#include <iostream>
 
 #pragma endregion
 
@@ -34,6 +35,7 @@ void MainScene::OnEvent(const sf::Event& event) {
 				if (mousePosition.y < m_diameter + m_diameter * i) {
 					EnemyEntity* enemy = CreateEntity<EnemyEntity>(m_radius, sf::Color::Red);
 					enemy->SetPosition(mousePosition.x, m_radius + m_diameter * i);
+					m_enemies.push_back(enemy);
 					break;
 				}
 			}
@@ -51,9 +53,12 @@ void MainScene::OnUpdate() {
 		}
 
 		for (int i = 0; i < m_enemies.size(); i++) {
-			if (tower->GetPosition().y == m_enemies[i]->GetPosition().y) {
+			float towerHeight = tower->GetPosition().y;
+			float enemyHeight = m_enemies[i]->GetPosition().y;
+
+			if (towerHeight == enemyHeight) {
 				float distance = Utils::GetDistance(tower->GetPosition().x, 0, m_enemies[i]->GetPosition().x, 0);
-				if(distance < 256) { tower->Shoot(); }
+				if (distance < 860) { tower->SetState(TowerEntity::State::Shooting); }
 			}
 		}
 	}

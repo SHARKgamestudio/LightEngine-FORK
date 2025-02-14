@@ -11,34 +11,30 @@ class Action;
 
 class TowerEntity : public LivingEntity {
 public:
-	//enum State {
-	//	Idle,
-	//	Shooting,
-	//	Reloading,
+	enum State {
+		Idle,
+		Shooting,
+		Reloading,
 
-	//	Empty,
-	//	Loaded,
-	//	Full,
+		Empty,
+		Loaded,
+		Full,
 
-	//	Count
-	//};
+		Count
+	};
 
 	TowerEntity();
 	void OnInitialize() override;
 	void OnUpdate() override;
 	void Die() override;
 
-	void Shoot();
-	void Reload();
-private:
+	bool SetState(State _state);
 
 	int m_ammo, m_max;
-	Timer* m_shoot;
-	Timer* m_reload;
 
-	bool temp_switch;
-
-	/*State m_current;
+private:
+	State m_current;
+	Action* m_actions[Count];
 	int m_conditions[Count][Count];
-	Action** m_actions;*/
+	void AllowTransition(State _from, State _to);
 };

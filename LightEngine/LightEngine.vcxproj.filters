@@ -19,6 +19,12 @@
     <Filter Include="Game\Modules">
       <UniqueIdentifier>{f0985649-6ea4-4178-ae2b-810f52610cec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Entities\TowerEntity">
+      <UniqueIdentifier>{c0351f20-c72a-422a-b91c-50dcd0ad7745}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Entities\TowerEntity\Actions">
+      <UniqueIdentifier>{4135c6b6-d99b-4fb7-a876-1c214105b707}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Entity.cpp">
@@ -39,9 +45,6 @@
     <ClCompile Include="BulletEntity.cpp">
       <Filter>Game\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="TowerEntity.cpp">
-      <Filter>Game\Entities</Filter>
-    </ClCompile>
     <ClCompile Include="MainScene.cpp">
       <Filter>Game\Scenes</Filter>
     </ClCompile>
@@ -60,7 +63,27 @@
     <ClCompile Include="AttackModule.cpp">
       <Filter>Game\Modules</Filter>
     </ClCompile>
-    <ClCompile Include="LivingEntity.cpp" />
+    <ClCompile Include="LivingEntity.cpp">
+      <Filter>Game\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="TowerEntity.cpp">
+      <Filter>Game\Entities\TowerEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionFull.cpp">
+      <Filter>Game\Entities\TowerEntity\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionShooting.cpp">
+      <Filter>Game\Entities\TowerEntity\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionLoaded.cpp">
+      <Filter>Game\Entities\TowerEntity\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionReloading.cpp">
+      <Filter>Game\Entities\TowerEntity\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionEmpty.cpp">
+      <Filter>Game\Entities\TowerEntity\Actions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h">
@@ -84,9 +107,6 @@
     <ClInclude Include="BulletEntity.h">
       <Filter>Game\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="TowerEntity.h">
-      <Filter>Game\Entities</Filter>
-    </ClInclude>
     <ClInclude Include="MainScene.h">
       <Filter>Game\Scenes</Filter>
     </ClInclude>
@@ -108,6 +128,24 @@
     <ClInclude Include="LivingEntity.h">
       <Filter>Game\Entities</Filter>
     </ClInclude>
+    <ClInclude Include="TowerEntity.h">
+      <Filter>Game\Entities\TowerEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionFull.h">
+      <Filter>Game\Entities\TowerEntity\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionShooting.h">
+      <Filter>Game\Entities\TowerEntity\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionLoaded.h">
+      <Filter>Game\Entities\TowerEntity\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionReloading.h">
+      <Filter>Game\Entities\TowerEntity\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionEmpty.h">
+      <Filter>Game\Entities\TowerEntity\Actions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Scene.inl">
@@ -122,7 +160,7 @@
     <None Include="packages.config">
       <Filter>Engine</Filter>
     </None>
-    <None Include="Action.inl">
+    <None Include="Action.h">
       <Filter>Game\Utils</Filter>
     </None>
   </ItemGroup>

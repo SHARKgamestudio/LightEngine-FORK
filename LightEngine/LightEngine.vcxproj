@@ -20,6 +20,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ActionEmpty.cpp" />
+    <ClCompile Include="ActionFull.cpp" />
+    <ClCompile Include="ActionLoaded.cpp" />
+    <ClCompile Include="ActionReloading.cpp" />
+    <ClCompile Include="ActionShooting.cpp" />
     <ClCompile Include="AttackModule.cpp" />
     <ClCompile Include="BulletEntity.cpp" />
     <ClCompile Include="Debug.cpp" />
@@ -36,6 +41,11 @@
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ActionEmpty.h" />
+    <ClInclude Include="ActionFull.h" />
+    <ClInclude Include="ActionLoaded.h" />
+    <ClInclude Include="ActionReloading.h" />
+    <ClInclude Include="ActionShooting.h" />
     <ClInclude Include="AttackModule.h" />
     <ClInclude Include="BulletEntity.h">
       <SubType>
@@ -65,7 +75,7 @@
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Action.inl" />
+    <None Include="Action.h" />
     <None Include="Entity.inl" />
     <None Include="GameManager.inl" />
     <None Include="packages.config" />
